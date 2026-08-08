@@ -1,0 +1,33 @@
+@startuml
+
+class Persona {
+    - nombre : String
+    - edad : int
+
+    + Persona(nombre : String, edad : int)
+    + getNombre() : String
+    + getEdad() : int
+}
+
+class Estudiante {
+    - carnet : String
+
+    + Estudiante(nombre : String, edad : int, carnet : String)
+    + getCarnet() : String
+    + mostrarDatos() : void
+}
+
+class Curso {
+    - nombre : String
+    - codigo : String
+
+    + Curso(nombre : String, codigo : String)
+    + getNombre() : String
+    + getCodigo() : String
+}
+
+Persona <|-- Estudiante
+
+Estudiante "0..*" -- "0..*" Curso : se inscribe en >
+
+@enduml
